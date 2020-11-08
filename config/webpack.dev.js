@@ -9,7 +9,6 @@ module.exports = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
-    historyApiFallback: true,
     open: true,
     compress: true,
     hot: true,
@@ -18,6 +17,7 @@ module.exports = merge(common, {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "../dist"),
+    publicPath: "/",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -29,7 +29,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
     ],
   },

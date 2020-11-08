@@ -1,0 +1,13 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 60px;
+    color: purple;
+    font-family: "Comic Sans MS", cursive;
+    text-transform: uppercase;
+  }
+}
